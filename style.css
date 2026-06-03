@@ -112,14 +112,25 @@ h1 {
     min-height: 7.5rem;
 }
 
-.result-image-wrap {
-    min-height: 0;
+.result-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: pointer;
 }
 
-.result-img {
-    max-width: 220px;
-    max-height: 220px;
-    border-radius: 8px;
+.result-overlay.active {
+    display: flex;
+}
+
+.overlay-img {
+    max-width: 70vw;
+    max-height: 70vh;
+    border-radius: 12px;
     object-fit: contain;
 }
 

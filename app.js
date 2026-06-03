@@ -40,18 +40,19 @@ const backspaceBtn = document.getElementById('backspace-btn');
 const clearBtn = document.getElementById('clear-btn');
 const submitBtn = document.getElementById('submit-btn');
 const charDisplay = document.getElementById('char-display');
-const resultImageWrap = document.getElementById('result-image-wrap');
+const resultOverlay = document.getElementById('result-overlay');
+const overlayImg = document.getElementById('overlay-img');
+
+resultOverlay.addEventListener('click', () => {
+    resultOverlay.classList.remove('active');
+});
 
 function showResultImage(type) {
     const list = type === 'correct' ? correctImages : wrongImages;
-    resultImageWrap.innerHTML = '';
-    if (list.length > 0) {
-        const src = list[Math.floor(Math.random() * list.length)];
-        const img = document.createElement('img');
-        img.src = src;
-        img.className = 'result-img';
-        resultImageWrap.appendChild(img);
-    }
+    if (list.length === 0) return;
+    const src = list[Math.floor(Math.random() * list.length)];
+    overlayImg.src = src;
+    resultOverlay.classList.add('active');
 }
 
 function initKeyboard() {
