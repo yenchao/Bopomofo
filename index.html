@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注音聽寫小遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>注音聽寫小遊戲</h1>
+        
+        <div class="game-area">
+            <div class="left-panel">
+                <div class="controls">
+                    <button id="play-btn" class="btn primary icon-btn" title="念出這個字">🔊</button>
+                    <button id="next-btn" class="btn secondary icon-btn" title="下一個字">➡️</button>
+                </div>
+                <div class="display-section">
+                    <div class="char-display" id="char-display"></div>
+                    <div class="status" id="status-message">點擊「念出這個字」開始！</div>
+                    <div class="result-image-wrap" id="result-image-wrap"></div>
+                    <div class="user-input" id="user-input"></div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="keyboard" id="keyboard">
+                    <!-- 鍵盤將由 JS 動態生成 -->
+                </div>
+                <div class="action-buttons">
+                    <button id="backspace-btn" class="btn warning icon-btn" title="倒退">⌫</button>
+                    <button id="clear-btn" class="btn warning icon-btn" title="清除">🗑️</button>
+                    <button id="submit-btn" class="btn success icon-btn" title="送出答案">✅</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
