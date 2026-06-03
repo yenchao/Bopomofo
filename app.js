@@ -140,13 +140,23 @@ const charDisplay = document.getElementById('char-display');
 const resultOverlay = document.getElementById('result-overlay');
 const overlayImg = document.getElementById('overlay-img');
 
+let lastAnswerCorrect = false;
+
 resultOverlay.addEventListener('click', () => {
     resultOverlay.classList.remove('active');
+    if (lastAnswerCorrect) {
+        lastAnswerCorrect = false;
+        nextWord();
+    }
 });
 
 function showResultImage(type) {
+    lastAnswerCorrect = (type === 'correct');
     const list = type === 'correct' ? correctImages : wrongImages;
-    if (list.length === 0) return;
+    if (list.length === 0) {
+        if (type === 'correct') nextWord();
+        return;
+    }
     const src = list[Math.floor(Math.random() * list.length)];
     overlayImg.src = src;
     resultOverlay.classList.add('active');
@@ -250,6 +260,8 @@ submitBtn.addEventListener('click', () => {
         statusMessage.className = 'status wrong';
         showResultImage('wrong');
     }
+    currentInput = "";
+    updateDisplay();
 });
 
 // 初始化
