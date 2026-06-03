@@ -196,7 +196,7 @@ function speak(text) {
     setTimeout(() => {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'zh-TW';
-        utterance.rate = 0.3;
+        utterance.rate = 0.1;
         window.speechSynthesis.speak(utterance);
     }, 150);
 }
