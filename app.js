@@ -188,14 +188,17 @@ function updateDisplay() {
 }
 
 function speak(text) {
-    if ('speechSynthesis' in window) {
+    if (!('speechSynthesis' in window)) {
+        alert('您的瀏覽器不支援語音合成功能');
+        return;
+    }
+    window.speechSynthesis.cancel();
+    setTimeout(() => {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'zh-TW';
         utterance.rate = 0.3;
         window.speechSynthesis.speak(utterance);
-    } else {
-        alert('您的瀏覽器不支援語音合成功能');
-    }
+    }, 150);
 }
 
 function nextWord() {
