@@ -93,7 +93,7 @@ function speak(text) {
     if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'zh-TW';
-        utterance.rate = 0.8; // 稍微放慢語速，讓發音更清晰
+        utterance.rate = 0.5;
         window.speechSynthesis.speak(utterance);
     } else {
         alert('您的瀏覽器不支援語音合成功能');
@@ -145,7 +145,7 @@ submitBtn.addEventListener('click', () => {
         statusMessage.className = 'status correct';
         showResultImage('correct');
     } else {
-        statusMessage.textContent = `答錯了！正確答案是「${currentWord.zhuyin}」`;
+        statusMessage.textContent = '答錯了，再試一次！';
         statusMessage.className = 'status wrong';
         showResultImage('wrong');
     }

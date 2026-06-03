@@ -157,10 +157,10 @@ h1 {
     background-color: var(--key-bg);
     border: none;
     border-radius: 6px;
-    padding: 0.9rem;
-    font-size: 1.4rem;
+    padding: 1.1rem;
+    font-size: 1.8rem;
     cursor: pointer;
-    min-width: 52px;
+    min-width: 64px;
     transition: background-color 0.2s;
 }
 
@@ -170,6 +170,9 @@ h1 {
 
 .key-btn.tone {
     background-color: #d1c4e9;
+    font-size: 2rem;
+    min-width: 72px;
+    padding: 1.1rem 1.4rem;
 }
 .key-btn.tone:hover {
     background-color: #b39ddb;
